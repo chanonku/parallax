@@ -1,0 +1,75 @@
+<style>
+    
+
+    .parallax-container {
+      height: 2000px;
+    }
+    .parallax-background {
+      background: url('galaxy.jpg');
+      /* background: url('https://www.ppthreesixtyframework.com/contentblocks/img/galaxy.jpg'); */
+      background-size:cover;
+      position: fixed;
+      width: 100%;
+      height: 1250px;
+      top:0;
+      left:0;
+      z-index: -1;
+    }
+    .parallax-content {
+      color: #fff;
+      font-family: arial;
+      position: fixed;
+      top: 300px;
+      margin-left: 200px;
+      margin-right: 200px;
+      width: auto;
+      height: 800px;
+      text-align: center;
+    }
+    @media screen and (max-width: 1339px) {
+      .parallax-content {
+        color: #fff;
+        font-family: arial;
+        position: fixed;
+        top: 300px;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: auto;
+        height: 800px;
+        text-align: center;
+      }
+      .parallax-background {
+        background-size: contain;
+      }
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(window).scroll(function(e){
+      parallax();
+    });
+    function parallax() {
+      var scrolled = $(window).scrollTop();
+      // $('.parallax-background').css('top', -(scrolled * 0.2) + 'px');
+      if (scrolled > 1500) {
+        // $('.parallax-background').css('top', -(scrolled * ) + 'px');
+        $('.parallax-content').css('position', 'relative');
+        $('.parallax-content').css('top', 1500);
+      } else {
+        $('.parallax-background').css('top', -(scrolled * 0.2) + 'px');
+        $('.parallax-content').css('position', 'fixed');
+        $('.parallax-content').css('top', '300px');
+      }
+    }
+  </script>
+
+<div class="parallax-container">
+  <div class="parallax-background"></div>
+  <div class="parallax-content">
+      <h1>PP360</h1>
+      <h2>The standard Lorem Ipsum passage, used since the 1500s</h2>
+      <h3>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</h3>
+      <br />
+      <a class="button pink cropBottom ae-7 fromCenter" href="# ">Lorem ipsum dolor</a>
+  </div>
+</div>
